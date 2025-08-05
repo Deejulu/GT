@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="GT Food Plus - Authentic Nigerian restaurant offering delicious traditional cuisine including swallow, soups, rice dishes and more in Lagos">
+    <title>GT Food Plus - Authentic Nigerian Cuisine | Lagos Restaurant</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- We'll add CSS and JS links later -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body >
+    <!-- Skip to Content Link for Accessibility -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="GT Food Plus Home">
+                <img src="gtlogo.png" alt="GT Food Plus Logo" width="300px" height="200px">
+            </a>
+
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="navbar" aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li>
+                        <a href="#cart" class="nav-link cart-icon" aria-label="Shopping Cart">
+                            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <style>
+            /* GT Food Plus Color Scheme */
+            .header {
+                --primary-color: #E67E22;
+                /* Orange - main brand color */
+                --secondary-color: #D35400;
+                /* Darker orange */
+                --dark-color: #2C3E50;
+                /* Dark blue for contrast */
+                --white: #FFFFFF;
+                --black: #000000;
+                --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                --transition: all 0.3s ease;
+            }
+
+            /* Header Base Styles */
+            .header {
+                background-color: var(--white);
+                box-shadow: var(--shadow);
+                position: fixed;
+                width: 100%;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+                transition: var(--transition);
+                
+            }
+
+            .header.scrolled {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+
+            .header .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            /* Logo Styles */
+            .header .logo {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+            }
+
+            .header .logo img {
+                height: 80px;
+                width: auto;
+                transition: var(--transition);
+            }
+
+            /* Navigation Styles */
+            .header .navbar {
+                display: flex;
+                align-items: center;
+            }
+
+            .header .nav-links {
+                display: flex;
+                list-style: none;
+            }
+
+            .header .nav-links li {
+                margin-left: 30px;
+                position: relative;
+            }
+
+            .header .nav-link {
+                color: var(--dark-color);
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 16px;
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            .header .nav-link:hover,
+            .header .nav-link.active {
+                color: var(--primary-color);
+            }
+
+            .header .nav-link.active::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: var(--primary-color);
+            }
+
+            .header .cart-icon {
+                position: relative;
+            }
+
+            .header .cart-count {
+                position: absolute;
+                top: -8px;
+                right: -12px;
+                background-color: var(--primary-color);
+                color: var(--white);
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+            }
+
+            /* Hamburger Menu Styles */
+            .header .hamburger {
+                display: none;
+                cursor: pointer;
+                background: none;
+                border: none;
+                padding: 10px;
+                z-index: 1001;
+            }
+
+            .header .hamburger .bar {
+                display: block;
+                width: 25px;
+                height: 3px;
+                margin: 5px 0;
+                background-color: var(--dark-color);
+                transition: var(--transition);
+            }
+
+            .header .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .header .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .header .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            /* Responsive Styles */
+            @media (max-width: 992px) {
+                .header .hamburger {
+                    display: block;
+                }
+
+                .header .navbar {
+                    position: fixed;
+                    top: 0;
+                    right: -100%;
+                    width: 80%;
+                    max-width: 400px;
+                    height: 100vh;
+                    background-color: var(--white);
+                    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                    flex-direction: column;
+                    justify-content: center;
+                    transition: var(--transition);
+                    z-index: 1000;
+                }
+
+                .header .navbar.active {
+                    right: 0;
+                }
+
+                .header .nav-links {
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 20px;
+                }
+
+                .header .nav-links li {
+                    margin: 20px 0;
+                }
+
+                .header .nav-link {
+                    font-size: 18px;
+                }
+
+                .header .cart-count {
+                    top: -10px;
+                    right: -15px;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .header .logo img {
+                    height: 40px;
+                }
+
+                .header .container {
+                    padding: 10px 15px;
+                }
+
+                .header .navbar {
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+        </style>
+
+        <script>
+            // Self-executing function to avoid polluting global scope
+            (function () {
+                const header = document.querySelector('.header');
+                const hamburger = header.querySelector('.hamburger');
+                const navbar = header.querySelector('.navbar');
+                const navLinks = header.querySelectorAll('.nav-link');
+
+                // Toggle mobile menu
+                hamburger.addEventListener('click', function () {
+                    this.classList.toggle('active');
+                    navbar.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.classList.contains('active'));
+                });
+
+                // Close mobile menu when clicking a link
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        if (navbar.classList.contains('active')) {
+                            hamburger.classList.remove('active');
+                            navbar.classList.remove('active');
+                            hamburger.setAttribute('aria-expanded', 'false');
+                        }
+
+                        // Update active link
+                        navLinks.forEach(navLink => navLink.classList.remove('active'));
+                        this.classList.add('active');
+                    });
+                });
+
+                // Add scroll effect to header
+                window.addEventListener('scroll', function () {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+
+                // Initialize header state
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                }
+            })();
+        </script>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero" aria-labelledby="hero-heading">
+            <div class="corner-bottom-left"></div>
+            <div class="corner-bottom-right"></div>
+
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 id="hero-heading">Experience Authentic <span>Nigerian</span> Flavors</h1>
+                    <p class="hero-subtitle">GT Food Plus brings you the best of Nigerian cuisine with fresh ingredients
+                        and traditional recipes passed down through generations</p>
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn btn-primary">
+                            <span>See Menu</span>
+                            <i class="fas fa-utensils"></i>
+                        </a>
+                        <a href="tel:+2348123456789" class="btn btn-secondary">
+                            <span>Call to Order</span>
+                            <i class="fas fa-phone-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image" data-animate="fadeIn">
+                    <img src="pza.png" alt="Delicious Nigerian jollof rice with fried plantain and chicken"
+                        loading="eager">
+                </div>
+            </div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-scroll-indicator">
+                <span>Scroll Down</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+
+        <!-- Menu Section -->
+        <section id="menu" class="menu-section" aria-labelledby="menu-heading" data-animate="fadeInUp" style="transition-delay: 0.2s">
+            <div class="corner-bottom-left"></div>
+            <div class="corner-bottom-right"></div>
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="menu-heading" class="section-title">Our Menu</h2>
+                    <p class="section-subtitle" style="color: rgb(16, 16, 16);">Authentic Nigerian Cuisine</p>
+                </header>
+
+                <!-- Menu Navigation -->
+                <nav class="menu-nav" aria-label="Menu categories">
+                    <ul class="menu-categories">
+                        <li><button class="menu-category active" data-category="swallow">Swallows</button></li>
+                        <li><button class="menu-category" data-category="soups">Soups</button></li>
+                        <li><button class="menu-category" data-category="rice">Rice Dishes</button></li>
+                        <li><button class="menu-category" data-category="proteins">Proteins</button></li>
+                        <li><button class="menu-category" data-category="snacks">Snacks</button></li>
+                        <li><button class="menu-category" data-category="drinks">Drinks</button></li>
+                    </ul>
+                </nav>
+
+                <!-- Menu Content Sections -->
+                <div class="menu-content-wrapper">
+                    <!-- Swallow Category -->
+                    <div id="swallow" class="menu-category-content active">
+                        <h3 id="swallow-heading">Swallows</h3>
+                        <div class="menu-items">
+                            <!-- Pounded Yam -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="poundo.jpg" alt="Pounded Yam" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Pounded Yam</h4>
+                                    <p class="price">₦1,500</p>
+                                    <p class="description">Smooth, stretchy yam paste - the perfect accompaniment to
+                                        Nigerian soups</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Eba -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="eba.jpg" alt="Eba" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Eba</h4>
+                                    <p class="price">₦1,200</p>
+                                    <p class="description">Garri (cassava flakes) prepared with hot water - a Nigerian
+                                        staple</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Fufu -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="fufu.jpg" alt="Fufu" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Fufu</h4>
+                                    <p class="price">₦1,400</p>
+                                    <p class="description">Soft dough from cassava and plantain - a West African classic
+                                    </p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Semolina -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="semo.jpg" alt="Semolina" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Semolina</h4>
+                                    <p class="price">₦1,300</p>
+                                    <p class="description">Wheat semolina swallow - light and fluffy texture</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Soups Category -->
+                    <div id="soups" class="menu-category-content">
+                        <h3 id="soups-heading">Soups & Stews</h3>
+                        <div class="menu-items">
+                            <!-- Egusi Soup -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="egusi.jpg" alt="Egusi Soup" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Egusi Soup</h4>
+                                    <p class="price">₦2,800</p>
+                                    <p class="description">Rich melon seed soup with assorted meats, fish, and
+                                        vegetables</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Ogbono Soup -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="ogbono.jpg" alt="Ogbono Soup" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Ogbono Soup</h4>
+                                    <p class="price">₦2,700</p>
+                                    <p class="description">African mango seed soup with okra - known for its drawy
+                                        texture</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Efo Riro -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="bitter.jpg" alt="Efo Riro" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Efo Riro</h4>
+                                    <p class="price">₦2,500</p>
+                                    <p class="description">Yoruba vegetable stew with assorted meat and fish</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Oha Soup -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="afang.jpg" alt="Oha Soup" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Oha Soup</h4>
+                                    <p class="price">₦3,000</p>
+                                    <p class="description">Traditional Igbo soup with oha leaves, cocoyam, and assorted
+                                        proteins</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Rice Dishes Category -->
+                    <div id="rice" class="menu-category-content">
+                        <h3 id="rice-heading">Main Dishes</h3>
+                        <div class="menu-items">
+                            <!-- Jollof Rice -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="jollofrice.jpg" alt="Jollof Rice" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Jollof Rice</h4>
+                                    <p class="price">₦2,500</p>
+                                    <p class="description">Party-style jollof with chicken - the ultimate Nigerian party
+                                        dish</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Fried Rice -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="fried rice.jpg" alt="Fried Rice" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Fried Rice</h4>
+                                    <p class="price">₦2,700</p>
+                                    <p class="description">Nigerian-style fried rice with assorted meats and vegetables
+                                    </p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Coconut Rice -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="coconutrice.jpg" alt="Coconut Rice" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Coconut Rice</h4>
+                                    <p class="price">₦2,600</p>
+                                    <p class="description">Fragrant rice cooked with coconut milk and spices</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Ofada Rice -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="fried rice.jpg" alt="Ofada Rice" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Ofada Rice</h4>
+                                    <p class="price">₦3,000</p>
+                                    <p class="description">Local rice served with special ofada stew and assorted meats
+                                    </p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Proteins Category -->
+                    <div id="proteins" class="menu-category-content">
+                        <h3 id="proteins-heading">Proteins</h3>
+                        <div class="menu-items">
+                            <!-- Grilled Chicken -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="roastchick.jpg" alt="Grilled Chicken" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Grilled Chicken</h4>
+                                    <p class="price">₦3,500</p>
+                                    <p class="description">Succulent spicy grilled chicken - perfectly seasoned</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Fried Fish -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="fish.webp" alt="Fried Fish" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Fried Fish</h4>
+                                    <p class="price">₦3,800</p>
+                                    <p class="description">Whole fried tilapia or croaker - crispy and flavorful</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Peppered Goat Meat -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="goat.jpg" alt="Peppered Goat Meat" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Peppered Goat Meat</h4>
+                                    <p class="price">₦3,200</p>
+                                    <p class="description">Spicy grilled goat meat - tender and well-seasoned</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Assorted Meat -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="pepchicken.jpg" alt="Assorted Meat" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Assorted Meat</h4>
+                                    <p class="price">₦2,800</p>
+                                    <p class="description">Mix of beef, tripe, shaki, and other parts - cooked to
+                                        perfection</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Snacks Category -->
+                    <div id="snacks" class="menu-category-content">
+                        <h3 id="snacks-heading">Snacks</h3>
+                        <div class="menu-items">
+                            <!-- Spring Rolls -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="chocake.jpg" alt="Spring Rolls" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Spring Rolls (6pcs)</h4>
+                                    <p class="price">₦1,800</p>
+                                    <p class="description">Crispy vegetable spring rolls with sweet chili sauce</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Samosa -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="panc.jpeg" alt="Samosa" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Samosa (3pcs)</h4>
+                                    <p class="price">₦1,500</p>
+                                    <p class="description">Spicy meat-filled pastries - crispy and flavorful</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Puff Puff -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="puffpuff.jpg" alt="Puff Puff" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Puff Puff (10pcs)</h4>
+                                    <p class="price">₦1,200</p>
+                                    <p class="description">Sweet deep-fried dough balls - a Nigerian favorite</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="pza.png" alt="Puff Puff" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Pizza</h4>
+                                    <p class="price">₦8,200</p>
+                                    <p class="description">Sweet deep-fried dough balls - a Nigerian favorite</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+
+
+
+                            <!-- Chicken Pie -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="panc.jpeg" alt="Chicken Pie" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Chicken Pie</h4>
+                                    <p class="price">₦1,200</p>
+                                    <p class="description">Flaky pastry with savory chicken filling</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Drinks Category -->
+                    <div id="drinks" class="menu-category-content">
+                        <h3 id="drinks-heading">Drinks</h3>
+                        <div class="menu-items">
+                            <!-- Chapman -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/chapman.webp" alt="Chapman" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Chapman</h4>
+                                    <p class="price">₦1,500</p>
+                                    <p class="description">Nigerian signature cocktail - refreshing and colorful</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Zobo -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/zobo.webp" alt="Zobo Drink" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Zobo Drink</h4>
+                                    <p class="price">₦1,000</p>
+                                    <p class="description">Hibiscus tea with pineapple and ginger - refreshing and
+                                        healthy</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Smoothies -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/smoothies.webp" alt="Fruit Smoothies" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Fruit Smoothies</h4>
+                                    <p class="price">₦1,800</p>
+                                    <p class="description">Mango, pineapple or mixed fruit - creamy and delicious</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Soft Drinks -->
+                            <article class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/mineral.webp" alt="Soft Drinks" loading="lazy">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Soft Drinks</h4>
+                                    <p class="price">₦700</p>
+                                    <p class="description">Coke, Fanta, Sprite, Malt - chilled and refreshing</p>
+                                    <p class="availability available">In Stock</p>
+                                    <div class="item-controls">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-minus">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="quantity-plus">+</button>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const categoryButtons = document.querySelectorAll('.menu-category');
+                const categoryContents = document.querySelectorAll('.menu-category-content');
+
+                // Function to show a specific category
+                function showCategory(categoryId) {
+                    categoryContents.forEach(content => {
+                        if (content.id === categoryId) {
+                            content.classList.add('active');
+                            content.style.display = 'block';
+                        } else {
+                            content.classList.remove('active');
+                            content.style.display = 'none';
+                        }
+                    });
+
+                    // Update active button
+                    categoryButtons.forEach(button => {
+                        if (button.getAttribute('data-category') === categoryId) {
+                            button.classList.add('active');
+                        } else {
+                            button.classList.remove('active');
+                        }
+                    });
+                }
+
+                // Add click event listeners
+                categoryButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const categoryId = this.getAttribute('data-category');
+                        showCategory(categoryId);
+                    });
+                });
+
+                // Initialize with first category visible
+                if (categoryButtons.length > 0) {
+                    const firstCategoryId = categoryButtons[0].getAttribute('data-category');
+                    showCategory(firstCategoryId);
+                }
+            });
+        </script>
+        <!-- Cart Section -->
+        <!-- Cart Section -->
+        <section id="cart" class="cart-section" aria-labelledby="cart-heading" data-animate="slideInLeft">
+            <div class="container">
+                <h2 id="cart-heading" class="section-title">Your Order</h2>
+
+                <div class="cart-items">
+                    <!-- Empty cart message (shown by default) -->
+                    <div class="empty-cart-message">
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                        <p>Your cart is empty</p>
+                        <a href="#menu" class="btn btn-primary">Browse Menu</a>
+                    </div>
+
+                    <!-- Cart items list (hidden by default) -->
+                    <div class="cart-items-list" hidden>
+                        <ul class="cart-items-container"></ul>
+
+                        <div class="cart-summary">
+                            <div class="summary-details">
+                                <div class="summary-row">
+                                    <span>Subtotal:</span>
+                                    <span class="subtotal">₦0</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Delivery Fee:</span>
+                                    <span class="delivery-fee">₦500</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <span>Total:</span>
+                                    <span class="total-amount">₦500</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary proceed-to-payment">Proceed to Payment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            /* Cart Section Styles */
+            .cart-section {
+                padding: 3rem 1rem;
+                background-color: #f5f5f5;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .cart-items {
+                background: white;
+                border-radius: 12px;
+                padding: 2rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            }
+
+            .empty-cart-message {
+                text-align: center;
+                padding: 2rem;
+            }
+
+            .empty-cart-message i {
+                font-size: 3rem;
+                color: #e67e22;
+                margin-bottom: 1rem;
+            }
+
+            .empty-cart-message p {
+                font-size: 1.2rem;
+                color: #666;
+                margin-bottom: 1.5rem;
+            }
+
+            .cart-items-list {
+                display: none;
+            }
+
+            .cart-items-list[hidden] {
+                display: none;
+            }
+
+            .cart-items-container {
+                list-style: none;
+                padding: 0;
+                margin: 0 0 2rem 0;
+            }
+
+            .cart-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .cart-item:last-child {
+                border-bottom: none;
+            }
+
+            .cart-item-info {
+                flex: 1;
+            }
+
+            .cart-item-name {
+                font-weight: 600;
+                margin-bottom: 0.3rem;
+            }
+
+            .cart-item-price {
+                color: #e67e22;
+                font-weight: 600;
+            }
+
+            .cart-item-controls {
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+            }
+
+            .cart-item-quantity {
+                display: flex;
+                align-items: center;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                overflow: hidden;
+            }
+
+            .cart-item-quantity button {
+                background: #f5f5f5;
+                border: none;
+                padding: 0.5rem 0.8rem;
+                cursor: pointer;
+                font-size: 1rem;
+            }
+
+            .cart-item-quantity input {
+                width: 40px;
+                text-align: center;
+                border: none;
+                border-left: 1px solid #ddd;
+                border-right: 1px solid #ddd;
+                padding: 0.5rem;
+
+            }
+
+            .cart-item-quantity input::-webkit-outer-spin-button,
+            .cart-item-quantity input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            .remove-item {
+                background: none;
+                border: none;
+                color: #e74c3c;
+                cursor: pointer;
+                font-size: 1.2rem;
+                padding: 0.5rem;
+            }
+
+            .cart-summary {
+                background: #f9f9f9;
+                padding: 1.5rem;
+                border-radius: 8px;
+                margin-top: 2rem;
+            }
+
+            .summary-details {
+                margin-bottom: 1.5rem;
+            }
+
+            .summary-row {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 0.8rem;
+            }
+
+            .summary-row.total {
+                font-weight: 700;
+                font-size: 1.1rem;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid #ddd;
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 0.8rem 1.5rem;
+                border-radius: 6px;
+                font-weight: 600;
+                text-align: center;
+                text-decoration: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .btn-primary {
+                background: #e67e22;
+                color: white;
+                border: none;
+            }
+
+            .btn-primary:hover {
+                background: #d35400;
+            }
+
+            .proceed-to-payment {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1.1rem;
+            }
+
+            /* Responsive Styles */
+            @media (max-width: 768px) {
+                .cart-section {
+                    padding: 2rem 1rem;
+                }
+
+                .cart-items {
+                    padding: 1.5rem;
+                }
+
+                .cart-item {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1rem;
+                }
+
+                .cart-item-controls {
+                    width: 100%;
+                    justify-content: space-between;
+                }
+            }
+        </style>
+
+
+        <!-- Payment Section -->
+        <section id="payment" class="payment-section" aria-labelledby="payment-heading">
+            <div class="corner-bottom-left"></div>
+            <div class="corner-bottom-right"></div>
+            <div class="container">
+                <h2 id="payment-heading" class="section-title">Complete Your Order</h2>
+
+                <form id="payment-form" class="payment-form" novalidate data-animate="fadeIn">
+                    <fieldset>
+                        <legend>Customer Information</legend>
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                            <div class="error-message"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" required>
+                            <div class="error-message"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email (Optional)</label>
+                            <input type="email" id="email" name="email">
+                            <div class="error-message"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Delivery Address <span class="required">*</span></label>
+                            <textarea id="address" name="address" required></textarea>
+                            <div class="error-message"></div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Order Details</legend>
+                        <div class="form-group">
+                            <label>Order Type <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" name="order-type" value="delivery" checked>
+                                    Delivery
+                                </label>
+                                <label>
+                                    <input type="radio" name="order-type" value="pickup">
+                                    Pick Up
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Payment Method <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" name="payment-method" value="online" checked>
+                                    Online Payment
+                                </label>
+                                <label>
+                                    <input type="radio" name="payment-method" value="pod">
+                                    Pay on Delivery
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Additional Notes (Optional)</label>
+                            <textarea id="notes" name="notes" placeholder="Any special instructions?"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Place Order</button>
+                        <a href="#menu" class="btn btn-text">Add More Items</a>
+                    </div>
+                </form>
+
+                <div class="order-confirmation" hidden>
+                    <div class="confirmation-icon">
+                        <i class="fas fa-check-circle" aria-hidden="true"></i>
+                    </div>
+                    <h3>Order Received!</h3>
+                    <p>Thank you for your order. We'll contact you shortly to confirm details.</p>
+                    <p>Your order number is: <strong class="order-number">#GT12345</strong></p>
+                    <div class="confirmation-actions">
+                        <a href="#menu" class="btn btn-primary">Back to Menu</a>
+                        <a href="#" class="btn btn-text">View Order Status</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section" aria-labelledby="about-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="about-heading" class="section-title" style="color: white;">About GT Food Plus</h2>
+                    <p class="section-subtitle">Our story, mission, and values</p>
+                </header>
+
+                <div class="about-content">
+                    <div class="about-text">
+                        <article>
+                            <h3>Our Story</h3>
+                            <p>Founded in 2010, GT Food Plus began as a small family restaurant in Lagos with a passion
+                                for authentic Nigerian cuisine. What started as a humble kitchen serving neighbors has
+                                grown into one of the most beloved restaurants in the region.</p>
+                            <p>Today, we're proud to serve hundreds of customers daily, all while maintaining the
+                                homemade quality that started it all.</p>
+                        </article>
+
+                        <article>
+                            <h3>Our Mission</h3>
+                            <p>To bring the rich, diverse flavors of Nigerian cuisine to everyone while maintaining the
+                                highest standards of quality, hygiene, and customer service.</p>
+                            <p>We source our ingredients locally whenever possible, supporting Nigerian farmers and
+                                producers.</p>
+                        </article>
+
+                        <article>
+                            <h3>Our Team</h3>
+                            <p>Our chefs have decades of combined experience preparing traditional dishes exactly how
+                                they should be - with care, expertise, and love.</p>
+                            <p>From our kitchen staff to our delivery team, every member of GT Food Plus is dedicated to
+                                providing you with an exceptional dining experience.</p>
+                        </article>
+                    </div>
+
+                    <div class="about-image">
+                        <figure>
+                            <img src="gt.webp" alt="GT Food Plus Restaurant Interior" width="600" height=""
+                                loading="lazy">
+                            <figcaption style="color: #f9f9f9;">Our welcoming dining area in Victoria Island
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="about-features">
+                    <div class="feature">
+                        <i class="fas fa-utensils" aria-hidden="true"></i>
+                        <h4>Authentic Recipes</h4>
+                        <p>Traditional methods passed down through generations</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-leaf" aria-hidden="true"></i>
+                        <h4>Fresh Ingredients</h4>
+                        <p>Locally sourced, high-quality produce</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-award" aria-hidden="true"></i>
+                        <h4>Quality Service</h4>
+                        <p>Consistently excellent customer experiences</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery-section" aria-labelledby="gallery-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="gallery-heading" class="section-title">Gallery</h2>
+                    <p class="section-subtitle">A taste of what we offer</p>
+                </header>
+
+                <div class="gallery-grid">
+                    <figure class="gallery-item">
+                        <img src="jollofrice.jpg" alt="Pounded Yam with Egusi Soup" width="400" height="300"
+                            loading="lazy">
+                        <figcaption>Our signature pounded yam with egusi soup</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="afang.jpg" alt="Jollof Rice with Fried Plantain" width="400" height="300"
+                            loading="lazy">
+                        <figcaption>Popular jollof rice with fried plantain</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="frchicken.jpg" alt="Restaurant Dining Area" width="400" height="300" loading="lazy">
+                        <figcaption>Our comfortable dining area</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="pepchicken.jpg" alt="Chef Preparing Food" width="400" height="300" loading="lazy">
+                        <figcaption>Our chef preparing traditional dishes</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="bole.jpg" alt="Happy Customers Dining" width="400" height="300" loading="lazy">
+                        <figcaption>Customers enjoying their meal</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="puffpuff.jpg" alt="Assorted Nigerian Dishes" width="400" height="300" loading="lazy">
+                        <figcaption>Variety of our delicious offerings</figcaption>
+                    </figure>
+                </div>
+
+                <div class="gallery-cta">
+                    <p>See more of our dishes and restaurant on social media</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="contact-heading" class="section-title" style="color: white;">Contact Us</h2>
+                    <p class="section-subtitle">We'd love to hear from you</p>
+                </header>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+
+                        <address>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <p>123 Food Street, Victoria Island, Lagos, Nigeria</p>
+                            </div>
+
+                            <div class="info-item">
+                                <i class="fas fa-phone" aria-hidden="true"></i>
+                                <p><a href="tel:+2348123456789">+234 812 345 6789</a></p>
+                            </div>
+
+                            <div class="info-item">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                <p><a href="mailto:info@gtfoodplus.com">info@gtfoodplus.com</a></p>
+                            </div>
+
+                            <div class="info-item">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                <p><a href="https://wa.me/2348123456789">Chat on WhatsApp</a></p>
+                            </div>
+                        </address>
+
+                        <div class="opening-hours">
+                            <h4>Opening Hours</h4>
+                            <ul>
+                                <li><span>Monday - Friday:</span> 8:00 AM - 10:00 PM</li>
+                                <li><span>Saturday:</span> 9:00 AM - 11:00 PM</li>
+                                <li><span>Sunday:</span> 10:00 AM - 9:00 PM</li>
+                            </ul>
+                        </div>
+
+                        <div class="social-links">
+                            <h4>Follow Us</h4>
+                            <div class="social-icons">
+                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <form id="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="contact-name">Name <span class="required">*</span></label>
+                                <input type="text" id="contact-name" name="name" required>
+                                <div class="error-message"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-email">Email <span class="required">*</span></label>
+                                <input type="email" id="contact-email" name="email" required>
+                                <div class="error-message"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-phone">Phone Number</label>
+                                <input type="tel" id="contact-phone" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-subject">Subject</label>
+                                <input type="text" id="contact-subject" name="subject">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-message">Message <span class="required">*</span></label>
+                                <textarea id="contact-message" name="message" required></textarea>
+                                <div class="error-message"></div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+
+                    <div class="contact-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.123456789012!2d3.1234567890123456!3d6.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDcnMjQuNSJOIDPCsDA3JzI0LjUiRQ!5e0!3m2!1sen!2sng!4v1234567890123!5m2!1sen!2sng"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" aria-label="Map showing GT Food Plus location">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" aria-labelledby="footer-heading" class="feature" data-animate="slideInLeft">
+        <div class="container">
+            <h2 id="footer-heading" class="sr-only">Footer Navigation</h2>
+
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#home" aria-label="GT Food Plus Home">
+                        <img src="gtlogo.png" alt="GT Food Plus Logo" width="180" height="60" loading="lazy">
+                    </a>
+                    <p>Authentic Nigerian Cuisine Since 2010</p>
+
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 123 Food Street, VI, Lagos</p>
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+2348123456789">+234 812 345
+                                6789</a></p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a
+                                href="mailto:info@gtfoodplus.com">info@gtfoodplus.com</a></p>
+                    </address>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for updates and special offers</p>
+                    <form class="newsletter-form" novalidate>
+                        <div class="form-group">
+                            <label for="newsletter-email" class="sr-only">Email Address</label>
+                            <input type="email" id="newsletter-email" placeholder="Your Email" required>
+                            <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                    <p class="newsletter-note">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; <span id="current-year">2023</span> GT Food Plus. All Rights Reserved.</p>
+                </div>
+
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+
+                <div class="back-to-top">
+                    <a href="#home" aria-label="Back to top">
+                        <i class="fas fa-arrow-up"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- We'll add JavaScript files later -->
+    <!-- <script src="js/main.js" defer></script> -->
+</body>
+
+<script>
+    // Update current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+</script>
+
+<script src="func.js"></script>
+
+
+</html>
